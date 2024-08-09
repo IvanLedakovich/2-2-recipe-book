@@ -18,7 +18,7 @@ import {
 	recipesLoaded,
 	setCount,
 	showMoreButton
-} from '../redux/recipes/actionCreators';
+} from '../lib/recipes/actionCreators';
 import {
 	difficultyButtonDefault,
 	difficultyContainer,

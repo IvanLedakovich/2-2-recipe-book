@@ -55,7 +55,7 @@ const RecipePage: React.FC = () => {
 				<div id="headerLine" className={headerLineLeftSingle} />
 				<div id="headerLine" className={headerLineRightSingle} />
 				<div className={headerLogoContainerSingle}>
-					<img className={clsx(bowlSinglePage)} src={bowl} alt="bowl" />
+					<img className={clsx(bowlSinglePage)} src={bowl.src} alt="bowl" />
 					<h2 className={headerTextSingle}>Recipe Book</h2>
 				</div>
 			</div>
@@ -68,17 +68,17 @@ const RecipePage: React.FC = () => {
 					<h1 className={clsx(recipeNameSingle, 'text-6xl')}>{recipe.name}</h1>
 					<div className={parametersContainer}>
 						<div className={parameterSinglePage}>
-							<img src={difficulty} alt="" />
+							<img src={difficulty.src} alt="" />
 							<p className={parameterName}>Level</p>
 							<DifficultyParameterSingle difficulty={recipe.difficulty} />
 						</div>
 						<div className={parameterSinglePage}>
-							<img src={servingPlate} alt="" />
+							<img src={servingPlate.src} alt="" />
 							<p className={parameterName}>Servings</p>
 							<Servings servings={recipe.servings} />
 						</div>
 						<div className={parameterSinglePage}>
-							<img src={cuisineImage} alt="" />
+							<img src={cuisineImage.src} alt="" />
 							<p className={parameterName}>{recipe.cuisine}</p>
 							<div className={cuisineNameContainer}>
 								<h5 className={clsx('nunito-sans-normal', 'text-xl', 'text-[#D20C0C]')}>
@@ -87,7 +87,7 @@ const RecipePage: React.FC = () => {
 							</div>
 						</div>
 						<div className={parameterSinglePage}>
-							<img src={timerImage} alt="" />
+							<img src={timerImage.src} alt="" />
 							<p className={parameterName}>Cooking Time</p>
 							<div className={cookingTimeTextContainer}>
 								<h5 className={clsx('nunito-sans-normal', 'text-xl', 'text-[#244FE9]')}>

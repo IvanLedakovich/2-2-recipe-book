@@ -45,7 +45,7 @@ const RecipeCard: React.FC<{
 					</h3>
 				</div>
 				<div className={cuisineContainer}>
-					<img className={cuisineImage} src={cuisineImage} alt="cuisineImage" />
+					<img className={cuisineImage} src={cuisineImage.src} alt="cuisineImage" />
 					<h5 className={clsx('nunito-sans-normal', 'text-2xl')}>Cuisine</h5>
 					<div className={cuisineNameContainer}>
 						<h5 className={clsx('nunito-sans-normal', 'text-xl', 'text-[#D20C0C]')}>
@@ -54,7 +54,7 @@ const RecipeCard: React.FC<{
 					</div>
 				</div>
 				<div className={cookingTimeContainer}>
-					<img className={timerImage} src={timerImage} alt="timerImage" />
+					<img className={timerImage} src={timerImage.src} alt="timerImage" />
 					<h5 className={clsx('nunito-sans-normal', 'text-2xl')}>Cooking Time</h5>
 					<div className={cookingTimeTextContainer}>
 						<h5 className={clsx('nunito-sans-normal', 'text-xl', 'text-[#244FE9]')}>

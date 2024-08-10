@@ -77,7 +77,7 @@ const Home: React.FC = () => {
 
 	return (
 		<>
-			<img className={pizzaHeaderImage} src={pizzaHeader} alt="pizzaHeader" />
+			<img className={pizzaHeaderImage} src={pizzaHeader.src} alt="pizzaHeader" />
 			<div
 				className={pizzaHeaderContainer}
 				onLoad={() => getSixRecipesInitiallyAxios(dispatchFillInitially)}
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
 				<div id="headerLine" className={headerLineLeft} />
 				<div id="headerLine" className={headerLineRight} />
 				<div className={logoContainer}>
-					<img className={headerImage} src={bowl} alt="" />
+					<img className={headerImage} src={bowl.src} alt="" />
 					<h1 className={headerText}>Recipe Book</h1>
 				</div>
 			</div>
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
 				<div className={clsx('flex', 'w-[400px]', 'mt-[50px]', 'left-[3%]')}>
 					<img
 						className={searchBarDefault}
-						src={searchDefault}
+						src={searchDefault.src}
 						alt="searchDefault"
 					/>
 					<input

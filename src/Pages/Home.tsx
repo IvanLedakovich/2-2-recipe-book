@@ -11,7 +11,6 @@ import {
 import bowl from '../images/bowl.svg';
 import pizzaHeader from '../images/pizzaHeader.png';
 import searchDefault from '../images/seachDefault.svg';
-import RecipiesContainer from '../RecipiesContainer/RecipiesContainer';
 import {
 	fillInitially,
 	loadMore,
@@ -19,6 +18,7 @@ import {
 	setCount,
 	showMoreButton
 } from '../lib/recipes/actionCreators';
+import RecipiesContainer from '../RecipiesContainer/RecipiesContainer';
 import {
 	difficultyButtonDefault,
 	difficultyContainer,
@@ -49,10 +49,6 @@ const Home: React.FC = () => {
 		setDifficultyChosen(true);
 	};
 
-	const setDifficultyChosenFalse = () => {
-		setDifficultyChosen(false);
-	};
-
 	const dispatchFillInitially = (res) => {
 		dispatch(fillInitially(res));
 		dispatchShowMoreButton(true);
@@ -71,8 +67,17 @@ const Home: React.FC = () => {
 	};
 
 	const dispatchLoadMore = (res, isEnd: boolean) => {
-		dispatch(loadMore(res));
-		if (isEnd) dispatchShowMoreButton(false);
+		if (isEnd) {
+			setDifficultyChosen(true);
+		} else {
+			dispatch(loadMore(res));
+		}
+	};
+
+	const dispatchSetCount = () => {
+		dispatch(
+			setCount(currentlyCachedRecipesCount + NUMBER_OF_RECIPES_LOADED_AT_ONCE)
+		);
 	};
 
 	return (
@@ -109,7 +114,7 @@ const Home: React.FC = () => {
 					<button
 						className={difficultyButtonDefault}
 						onClick={() => {
-							setDifficultyChosenFalse();
+							setDifficultyChosenTrue();
 							getAllRecipesAxios(dispatchFillInitially);
 							dispatchShowMoreButton(false);
 							dispatchRecipesLoaded(true);
@@ -154,18 +159,17 @@ const Home: React.FC = () => {
 			</div>
 			<RecipiesContainer />
 			<div className={loadMoreButtonBigContainer}>
-				{showMoreButtonState ? (
+				{!difficultyChosen ? (
 					<div className={loadMoreButtonSmallContainer}>
 						<h5
 							className={clsx('just-me-again-down-here-small', 'text-5xl')}
 							onClick={() => {
 								if (!difficultyChosen) {
-									dispatch(
-										setCount(
-											currentlyCachedRecipesCount + NUMBER_OF_RECIPES_LOADED_AT_ONCE
-										)
+									getSixRecipesAxios(
+										currentlyCachedRecipesCount,
+										dispatchLoadMore,
+										dispatchSetCount
 									);
-									getSixRecipesAxios(currentlyCachedRecipesCount, dispatchLoadMore);
 								}
 							}}
 						>

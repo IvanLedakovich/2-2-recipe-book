@@ -25,7 +25,7 @@ export const getAllRecipesAxios = (_callback) => {
 			.get(`https://dummyjson.com/recipes`)
 			.then((res) => {
 				allRecipes = res.data.recipes;
-				_callback(res.data.recipes);
+				_callback(allRecipes);
 			})
 			.catch((error) => {
 				handleRequestError(error);
@@ -53,10 +53,13 @@ export const getRecipesByDifficultyAxios = (difficulty: string, _callback) => {
 	}
 };
 
-export const getSixRecipesAxios = (count: number, _callback) => {
+export const getSixRecipesAxios = (count: number, _callback, _callback2) => {
 	axios
 		.get(`https://dummyjson.com/recipes?limit=6&skip=${count}`)
 		.then((res) => {
+			if (!(res.data.recipes.length === 0)) {
+				_callback2();
+			}
 			_callback(res.data.recipes, res.data.recipes.length === 0);
 		})
 		.catch((error) => {

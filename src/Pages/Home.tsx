@@ -57,6 +57,7 @@ const Home: React.FC = () => {
 
 	const searchRecipes = (e: React.ChangeEvent<HTMLInputElement>) => {
 		searchRecipesAxios(e.target.value, dispatchFillInitially);
+		setDifficultyChosen(true);
 	};
 	const dispatchRecipesLoaded = (boolean) => {
 		dispatch(recipesLoaded(boolean));

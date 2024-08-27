@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import cuisineImage from '../../images/cuisineImage.svg';
-import timerImage from '../../images/timerImage.svg';
+import cuisineImage from '../../images/svg/cuisineImage.svg';
+import timerImage from '../../images/svg/timerImage.svg';
 import {
 	cardDifficultyBigContainer,
 	cookingTimeContainer,

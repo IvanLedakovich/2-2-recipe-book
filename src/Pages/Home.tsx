@@ -8,9 +8,9 @@ import {
 	getSixRecipesInitiallyAxios,
 	searchRecipesAxios
 } from '../api/axios';
-import bowl from '../images/bowl.svg';
-import pizzaHeader from '../images/pizzaHeader.png';
-import searchDefault from '../images/seachDefault.svg';
+import bowl from '../images/svg/bowl.svg';
+import pizzaHeader from '../images/png/pizzaHeader.png';
+import searchDefault from '../images//svg/seachDefault.svg';
 import {
 	fillInitially,
 	loadMore,

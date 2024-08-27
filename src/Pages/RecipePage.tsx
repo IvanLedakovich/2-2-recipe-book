@@ -23,11 +23,11 @@ import {
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Servings from '../components/Servings';
-import bowl from '../images/bowlBlack.svg';
-import cuisineImage from '../images/cuisineImage.svg';
-import difficulty from '../images/difficulty.svg';
-import servingPlate from '../images/servingPlate.svg';
-import timerImage from '../images/timerImage.svg';
+import bowl from '../images/svg/bowlBlack.svg';
+import cuisineImage from '../images/svg/cuisineImage.svg';
+import difficulty from '../images/svg/difficulty.svg';
+import servingPlate from '../images/svg/servingPlate.svg';
+import timerImage from '../images/svg/timerImage.svg';
 import DifficultyParameterSingle from '../RecipiesContainer/RecipeCard/Difficulty/DifficultyParameterSingle';
 import RecipeTagsSinglePage from '../RecipiesContainer/RecipeCard/RecipeCardTagsSinglePage';
 

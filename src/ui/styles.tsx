@@ -392,7 +392,8 @@ export const headerText = clsx(
 	'just-me-again-down-here-regular',
 	'text-4xl',
 	'float-right',
-	'm:text-7xl'
+	'm:text-7xl',
+	'text-[#ffffff]'
 );
 
 export const headerImage = clsx(
